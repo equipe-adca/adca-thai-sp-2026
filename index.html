@@ -2,92 +2,23 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>ADCA INSCRIÇÃO</title>
-    <meta name="viewport" content="width=device-width, initial-scale1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Ativação ADCA</title>
 </head>
 <body>
 
-    <nav>
-        <ul>
-            <li><a href="#" onclick="mostrarSecao('inicio')">ADCA</a></li>
-            <li><a href="#" onclick="mostrarSecao('mestre')">Mestre Ney Carvalho</a></li>
-            <li><a href="#" onclick="mostrarSecao('redes')">Redes Sociais ADCA</a></li>
-        </ul>
-    </nav>
+    <h2>Teste de Ativação do Formulário ADCA</h2>
+    <p>Preencha um e-mail de teste abaixo e clique em "Ativar E-mail" para forçar a ativação do FormSubmit.</p>
+    <p>O e-mail de destino é: adcathaicomercial@gmail.com</p>
 
-    <section id="inicio" class="active">
-        <div class="formulario">
-            <h2>Bem-vindo à inscrição da ADCA!</h2>
-            <p>A ADCA Muay Thai tem como missão formar atletas através da disciplina, respeito e dedicação.  
-                Nossa equipe é liderada pelo Mestre Ney Carvalho, referência na arte marcial.</p>
-            <p><strong>⚠️ Idade mínima para inscrição: 12 anos.</strong></p>
+    <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST">
+        
+        <label>Seu E-mail de Teste:</label>
+        <input type="email" name="E-mail_de_Teste" required>
 
-            <label for="nome">Nome completo do aluno que irá participar:<span class="required">*</span></label>
-            <input type="text" id="nome" placeholder="Nome completo" required 
-                   oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '')">
-            <span class="error-message" id="error-nome"></span>
+        <input type="hidden" name="_subject" value="TESTE DE ATIVAÇÃO - ADCA">
+        
+        <button type="submit">Ativar E-mail</button>
+    </form>
 
-            <label for="idade">Idade do aluno que irá participar:<span class="required">*</span></label>
-            <input type="number" id="idade" placeholder="Idade" required max="80">
-            <span class="error-message" id="error-idade"></span>
-            
-            <br>
-            <button onclick="verificarIdade()">Continuar</button>
-        </div>
-    </section>
-
-    <section id="ficha-adulto">
-        <h2>Ficha de Inscrição - Aluno Adulto</h2>
-        <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST">
-            
-            <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_subject" value="Nova inscrição - ADCA">
-            <input type="hidden" name="_template" value="table">
-            <fieldset>
-                <legend>Dados Pessoais</legend>
-                <label>Nome completo:<span class="required">*</span></label>
-                <input type="text" id="nome-adulto" name="Nome Completo" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''); atualizarTermoAdulto()">
-                
-                <label>E-mail:<span class="required">*</span></label>
-                <input type="email" id="email-adulto" name="E-mail" required placeholder="seu.email@exemplo.com">
-                </fieldset>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <section id="ficha-menor">
-        <h2>Ficha de Inscrição - Menor de Idade</h2>
-         <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST">
-            
-            <input type="hidden" name="_captcha" value="false"> <input type="hidden" name="_subject" value="Nova inscrição - Menor de idade - ADCA">
-            <input type="hidden" name="_template" value="table">
-            <fieldset>
-                <legend>Dados do Aluno</legend>
-                <label>Nome do aluno(a):<span class="required">*</span></label>
-                <input type="text" id="aluno-menor" name="Nome do Aluno" required 
-                       oninput="this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ''); atualizarTermo()">
-            </fieldset>
-
-            <fieldset>
-                <legend>Informações do Responsável</legend>
-                 <label>E-mail do Responsável:<span class="required">*</span></label>
-                <input type="email" id="email-resp" name="E-mail do Responsável" required placeholder="seu.email@exemplo.com">
-            </fieldset>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <section id="mestre">
-        <h2>Mestre Ney Carvalho</h2>
-    </section>
-    <section id="redes">
-        <h2>Siga-nos nas Redes Sociais</h2>
-    </section>
-
-
-    <script src="script.js"></script>
-    </body>
+</body>
 </html>
