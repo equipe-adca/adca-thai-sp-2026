@@ -211,10 +211,10 @@ function validarFichaAdulto() {
         isValid = false;
     }
     
-    if (grecaptcha.getResponse(0).length === 0) { 
-        showError('recaptcha-adulto', 'Por favor, marque "Não sou um robô".');
-        isValid = false;
-    }
+    // ****** MUDANÇA AQUI ******
+    // A validação de reCAPTCHA foi REMOVIDA.
+    // O Formspree fará isso no servidor automaticamente.
+    // ****** FIM DA MUDANÇA ******
 
     if (!isValid) {
         const firstError = document.querySelector('#ficha-adulto .error-message.active');
@@ -269,10 +269,10 @@ function validarFichaMenor() {
         isValid = false;
     }
 
-    if (grecaptcha.getResponse(1).length === 0) { 
-        showError('recaptcha-menor', 'Por favor, marque "Não sou um robô".');
-        isValid = false;
-    }
+    // ****** MUDANÇA AQUI ******
+    // A validação de reCAPTCHA foi REMOVIDA.
+    // O Formspree fará isso no servidor automaticamente.
+    // ****** FIM DA MUDANÇA ******
     
     if (!isValid) {
         const firstError = document.querySelector('#ficha-menor .error-message.active');
@@ -365,7 +365,6 @@ function mascaraCEP(campo) {
 // ATUALIZAR TERMOS DE RESPONSABILIDADE
 // ------------------------------------
 function atualizarTermoAdulto() {
-    // Agora o placeholder é [NOME COMPLETO] se vazio
     const nome = document.getElementById("nome-adulto")?.value.trim() || "[NOME COMPLETO]";
     const cidade = document.getElementById("cidade-adulto")?.value.trim() || "[CIDADE]";
     const data = getFormattedDate(); 
@@ -380,12 +379,11 @@ function atualizarTermoAdulto() {
 Declaro também estar apto(a) para a prática de atividades físicas e autorizo a vinculação de minha imagem e voz produzidas durante as atividades, sem fins lucrativos, em quaisquer meios de comunicação.
 
 Local: ${cidade}, Data: ${data}. 
-Assinatura: ${nome}`; // ****** MUDANÇA AQUI ******
+Assinatura: ${nome}`;
     }
 }
 
 function atualizarTermo() {
-    // Agora o placeholder é [NOME DO RESPONSÁVEL] se vazio
     const nomeResp = document.getElementById("nome-resp")?.value.trim() || "[NOME DO RESPONSÁVEL]";
     const rgResp = document.getElementById("rg-resp")?.value || "_____";
     const cpfResp = document.getElementById("cpf-resp")?.value || "_____";
@@ -402,7 +400,7 @@ function atualizarTermo() {
 
 Local: ${cidade}  Data: ${data}
 
-Assinatura do Responsável: ${nomeResp}`; // ****** MUDANÇA AQUI ******
+Assinatura do Responsável: ${nomeResp}`;
     }
 }
 

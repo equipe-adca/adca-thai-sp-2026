@@ -109,9 +109,8 @@ label span.required {
 
 input, select, textarea {
     padding: 14px;
-    /* ****** MUDANÇA AQUI ****** */
-    margin: 10px 0 5px 0; /* Margem inferior diminuída para o erro caber */
-    /* ****** FIM DA MUDANÇA ****** */
+    /* Margem inferior diminuída para o erro caber */
+    margin: 10px 0 5px 0; 
     font-size: 17px;
     border-radius: 6px;
     border: 1px solid #444;
