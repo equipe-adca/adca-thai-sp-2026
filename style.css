@@ -1,0 +1,241 @@
+/*
+  ESTILO BASE - APLICANDO IMAGEM DE FUNDO COM OVERLAY E MAIS SUTILEZA
+*/
+body {
+    background-color: #0d0d0d;
+    color: white;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    background-image: url('logo-adca.png'); 
+    background-size: 80%;
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    position: relative;
+}
+
+/*
+  CAMADA DE ESCURECIMENTO (OVERLAY) - BEM LEVE
+*/
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.88); /* Preto com 88% de opacidade */
+    z-index: -1;
+}
+
+/*
+  ESTILOS DO MENU E NAVEGAÇÃO
+*/
+nav {
+    background-color: rgba(17, 17, 17, 0.95); 
+    padding: 18px 0;
+    position: sticky; 
+    top: 0;
+    z-index: 10; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #E64A19;
+    text-decoration: none;
+}
+
+/*
+  ESTILOS DO CONTEÚDO PRINCIPAL E FORMULÁRIO
+*/
+section {
+    display: none;
+    padding: 30px;
+    max-width: 750px;
+    margin: 30px auto; 
+    background-color: rgba(25, 25, 25, 0.92); 
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    border-top: 3px solid #E64A19;
+}
+
+section.active {
+    display: block;
+}
+
+/* Estilo da Página de Sucesso */
+section#sucesso {
+    border-top: 3px solid #5cb85c; /* Verde sucesso */
+}
+
+
+.formulario {
+    text-align: center;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    color: #FBC02D;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: left;
+    font-size: 1.05em;
+}
+
+label span.required {
+    color: #E64A19; /* Laranja/Vermelho */
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+input, select, textarea {
+    padding: 14px;
+    /* ****** MUDANÇA AQUI ****** */
+    margin: 10px 0 5px 0; /* Margem inferior diminuída para o erro caber */
+    /* ****** FIM DA MUDANÇA ****** */
+    font-size: 17px;
+    border-radius: 6px;
+    border: 1px solid #444;
+    width: 100%;
+    background-color: #333;
+    color: #eee;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #E64A19;
+    box-shadow: 0 0 8px rgba(230, 74, 25, 0.5);
+    outline: none;
+}
+
+/* ****** NOVOS ESTILOS DE ERRO ****** */
+span.error-message {
+    display: none; /* Escondido por padrão */
+    text-align: left;
+    font-size: 0.9em;
+    color: #FFAAAA; /* Vermelho claro */
+    margin-top: 0px;
+    padding-left: 5px;
+}
+
+span.error-message.active {
+    display: block; /* Mostra quando a classe 'active' é adicionada */
+}
+
+input.error-border, select.error-border {
+    border: 1px solid #E64A19; /* Borda vermelha no campo com erro */
+    box-shadow: 0 0 8px rgba(230, 74, 25, 0.5); /* Sombra laranja/vermelha */
+}
+/* ****** FIM DOS NOVOS ESTILOS ****** */
+
+option {
+    font-weight: normal; 
+    color: #eee;
+    background-color: #333;
+}
+
+button {
+    padding: 15px 30px; 
+    font-size: 1.2em;
+    background-color: #E64A19;
+    color: white;
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    margin-top: 30px; 
+    transition: background-color 0.3s ease-in-out, transform 0.1s; 
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #BF360C;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    text-align: center;
+    color: white; 
+    border-bottom: 2px solid #E64A19;
+    padding-bottom: 12px;
+    margin-bottom: 35px;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* Estilo do H2 da Página de Sucesso */
+section#sucesso h2 {
+     border-bottom: 2px solid #5cb85c; /* Borda do h2 verde também */
+}
+
+
+h3 {
+    text-align: center;
+    color: #FBC02D;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* Estilos para organizar os fieldsets */
+fieldset {
+    border: 1px solid #555; /* Borda sutil */
+    border-radius: 8px;
+    padding: 10px 20px 20px 20px; /* Espaçamento interno */
+    margin-top: 35px;
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente mais escuro */
+}
+
+legend {
+    color: #FBC02D; /* Amarelo/Dourado */
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 0 10px; /* Espaçamento lateral */
+    margin-left: 5px; 
+    letter-spacing: 0.5px;
+}
+
+/* Estilo para centralizar a caixa do reCAPTCHA */
+.g-recaptcha {
+    margin-top: 25px;
+    display: inline-block; /* Ajuda na centralização */
+}
+
+
+.social a {
+    display: block;
+    color: #03a9f4;
+    margin: 12px 0;
+    text-align: center;
+    font-size: 1.2em;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #FBC02D;
+}
