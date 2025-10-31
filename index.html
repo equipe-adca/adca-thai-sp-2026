@@ -41,15 +41,10 @@
         <h2>Ficha de Inscrição - Aluno Adulto</h2>
         <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST" onsubmit="return validarFichaAdulto()">
             
-            <input type="hidden" name="_captcha" value="true"> <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html">
-            
-            <input type="hidden" name="_subject" value="Nova inscrição - ADCA">
+            <input type="hidden" name="_captcha" value="true"> <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html"> <input type="hidden" name="_subject" value="Nova inscrição - ADCA">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_cc" value="E-mail">
-
             <fieldset>
                 <legend>Dados Pessoais</legend>
-
                 <label>Modalidade:<span class="required">*</span></label>
                 <input type="text" name="Modalidade" value="Muay Thai" readonly>
 
@@ -189,11 +184,8 @@
             
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html">
-            
             <input type="hidden" name="_subject" value="Nova inscrição - Menor de idade - ADCA">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_cc" value="E-mail do Responsável">
-
             <fieldset>
                 <legend>Dados do Aluno</legend>
                 <label>Nome do aluno(a):<span class="required">*</span></label>
@@ -306,7 +298,7 @@
                     <option>Sim</option>
                     <option>Não</option>
                 </select>
-                <input type="text" name="Aluno Problema ou Necessidade Qual" placeholder="Se sim, descreva">
+                <input type="text" name="Aluno Problema ou Necessidade Qual" placeholder="Se sim, qual?">
             </fieldset>
 
             <fieldset>
@@ -316,6 +308,7 @@
             
             <div class="g-recaptcha" data-sitekey="6Levnf0rAAAAAMMWgr3mgO2JVPue7I5R4JmKSnWJ"></div>
             <span class="error-message" id="error-recaptcha-menor"></span>
+
             <button type="submit">Enviar</button>
         </form>
     </section>
