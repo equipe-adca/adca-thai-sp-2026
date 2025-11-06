@@ -9,10 +9,10 @@ body {
     padding: 0;
     
     background-image: url('logo-adca.png'); 
-    background-size: 80%;
+    background-size: 80%; /* 80% para Desktops */
     background-position: center center; 
     background-repeat: no-repeat; 
-    background-attachment: fixed;
+    background-attachment: fixed; /* Efeito Parallax para Desktops */
     position: relative;
 }
 
@@ -26,7 +26,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.88); /* Preto com 88% de opacidade */
+    background-color: rgba(0, 0, 0, 0.89); /* Preto com 88% de opacidade */
     z-index: -1;
 }
 
@@ -127,7 +127,7 @@ input:focus, select:focus, textarea:focus {
     outline: none;
 }
 
-/* ****** NOVOS ESTILOS DE ERRO ****** */
+/* ESTILOS DE ERRO */
 span.error-message {
     display: none; /* Escondido por padrão */
     text-align: left;
@@ -145,7 +145,6 @@ input.error-border, select.error-border {
     border: 1px solid #E64A19; /* Borda vermelha no campo com erro */
     box-shadow: 0 0 8px rgba(230, 74, 25, 0.5); /* Sombra laranja/vermelha */
 }
-/* ****** FIM DOS NOVOS ESTILOS ****** */
 
 option {
     font-weight: normal; 
@@ -187,7 +186,7 @@ h2 {
 
 /* Estilo do H2 da Página de Sucesso */
 section#sucesso h2 {
-     border-bottom: 2px solid #5cb85c; /* Borda do h2 verde também */
+     border-bottom: 2px solid #5cb85c;
 }
 
 
@@ -202,18 +201,18 @@ h3 {
 
 /* Estilos para organizar os fieldsets */
 fieldset {
-    border: 1px solid #555; /* Borda sutil */
+    border: 1px solid #555;
     border-radius: 8px;
-    padding: 10px 20px 20px 20px; /* Espaçamento interno */
+    padding: 10px 20px 20px 20px;
     margin-top: 35px;
-    background-color: rgba(0, 0, 0, 0.1); /* Fundo levemente mais escuro */
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 legend {
-    color: #FBC02D; /* Amarelo/Dourado */
+    color: #FBC02D;
     font-weight: bold;
     font-size: 1.4em;
-    padding: 0 10px; /* Espaçamento lateral */
+    padding: 0 10px;
     margin-left: 5px; 
     letter-spacing: 0.5px;
 }
@@ -221,7 +220,7 @@ legend {
 /* Estilo para centralizar a caixa do reCAPTCHA */
 .g-recaptcha {
     margin-top: 25px;
-    display: inline-block; /* Ajuda na centralização */
+    display: inline-block;
 }
 
 
@@ -237,4 +236,28 @@ legend {
 
 .social a:hover {
     color: #FBC02D;
+}
+
+
+/* OTIMIZAÇÃO PARA CELULAR */
+@media (max-width: 768px) {
+    body {
+        /* Garante que o tigre inteiro apareça no celular */
+        background-size: contain; 
+        
+        /* Desativa o fundo fixo no celular para performance de rolagem */
+        background-attachment: scroll; 
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    legend {
+        font-size: 1.2em;
+    }
 }
