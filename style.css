@@ -26,7 +26,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.89); /* Preto com 88% de opacidade */
+    background-color: rgba(0, 0, 0, 0.88); /* Preto com 88% de opacidade */
     z-index: -1;
 }
 

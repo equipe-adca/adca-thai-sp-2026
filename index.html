@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ADCA INSCRIÇÃO</title>
-    <meta name="viewport" content="width=device-width, initial-scale1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
         <div class="formulario">
             <h2>Bem-vindo à inscrição da ADCA!</h2>
             <p>A ADCA Muay Thai tem como missão formar atletas através da disciplina, respeito e dedicação.  
-                Nossa equipe é liderada pelo Mestre Ney Carvalho, referência na modalidade e em outras artes marciais.</p>
+                Nossa equipe é liderada pelo Mestre Ney Carvalho, referência na arte marcial.</p>
             <p><strong>⚠️ Idade mínima para inscrição: 12 anos.</strong></p>
 
             <label for="nome">Nome completo do aluno que irá participar:<span class="required">*</span></label>
@@ -39,10 +39,12 @@
 
     <section id="ficha-adulto">
         <h2>Ficha de Inscrição - Aluno Adulto</h2>
-        <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST" onsubmit="return validarFichaAdulto()">
+        <form action="https://formspree.io/f/xmpwrgop" method="POST" onsubmit="return validarFichaAdulto()">
             
-            <input type="hidden" name="_captcha" value="true"> <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html"> <input type="hidden" name="_subject" value="Nova inscrição - ADCA">
-            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html"> <input type="hidden" name="_subject" value="Nova inscrição - ADCA (ADULTO)">
+            
+            <input type="hidden" name="_replyto" value="E-mail">
+
             <fieldset>
                 <legend>Dados Pessoais</legend>
                 <label>Modalidade:<span class="required">*</span></label>
@@ -180,12 +182,13 @@
 
     <section id="ficha-menor">
         <h2>Ficha de Inscrição - Menor de Idade</h2>
-        <form action="https://formsubmit.co/adcathaicomercial@gmail.com" method="POST" onsubmit="return validarFichaMenor()">
+        <form action="https://formspree.io/f/xvgvweao" method="POST" onsubmit="return validarFichaMenor()">
             
-            <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://equipe-adca.github.io/adca-thai-sp-2026/sucesso.html">
-            <input type="hidden" name="_subject" value="Nova inscrição - Menor de idade - ADCA">
-            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Nova inscrição - ADCA (MENOR DE IDADE)">
+            
+            <input type="hidden" name="_replyto" value="E-mail do Responsável">
+
             <fieldset>
                 <legend>Dados do Aluno</legend>
                 <label>Nome do aluno(a):<span class="required">*</span></label>
@@ -316,10 +319,7 @@
     <section id="mestre">
         <h2>Mestre Ney Carvalho</h2>
         <p style="text-align: center;">
-            O Mestre Ney Carvalho é o fundador e líder da equipe ADCA Muay Thai, com uma trajetória marcada por dedicação, disciplina e paixão pelas artes marciais. Com anos de experiência no Muay Thai e em outras modalidades de combate, o Mestre Ney é reconhecido por sua capacidade de formar atletas completos — fortes não apenas no ringue, mas também na vida.
-            
-
-Seu trabalho vai muito além da técnica: ele inspira seus alunos a buscarem evolução constante, respeito e superação, valores que são a base da filosofia da ADCA.
+            Mestre Ney é o fundador da ADCA Muay Thai. Reconhecido por sua dedicação, disciplina e contribuição para a arte marcial.
         </p>
     </section>
 

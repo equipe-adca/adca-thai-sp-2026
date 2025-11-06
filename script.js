@@ -211,10 +211,12 @@ function validarFichaAdulto() {
         isValid = false;
     }
     
-    // ****** MUDANÇA AQUI ******
-    // A validação de reCAPTCHA foi REMOVIDA.
-    // O Formspree fará isso no servidor automaticamente.
-    // ****** FIM DA MUDANÇA ******
+    // Validação de reCAPTCHA (agora verificada pelo Formspree no servidor, mas 
+    // podemos checar se o usuário *clicou* para evitar um envio desnecessário)
+    if (grecaptcha.getResponse(0).length === 0) { 
+        showError('recaptcha-adulto', 'Por favor, marque "Não sou um robô".');
+        isValid = false;
+    }
 
     if (!isValid) {
         const firstError = document.querySelector('#ficha-adulto .error-message.active');
@@ -269,10 +271,11 @@ function validarFichaMenor() {
         isValid = false;
     }
 
-    // ****** MUDANÇA AQUI ******
-    // A validação de reCAPTCHA foi REMOVIDA.
-    // O Formspree fará isso no servidor automaticamente.
-    // ****** FIM DA MUDANÇA ******
+    // Validação de reCAPTCHA (agora verificada pelo Formspree no servidor)
+    if (grecaptcha.getResponse(1).length === 0) { 
+        showError('recaptcha-menor', 'Por favor, marque "Não sou um robô".');
+        isValid = false;
+    }
     
     if (!isValid) {
         const firstError = document.querySelector('#ficha-menor .error-message.active');
@@ -349,7 +352,7 @@ function mascaraRG(campo) {
         .replace(/^(\d{2})(\d{3})(\d{3})(\d{1}).*/, "$1.$2.$3-$4");
 }
 function mascaraTelefone(campo) {
-    campo.value = campo.value.replace(/\D/g, '');
+    campo.a.value = campo.value.replace(/\D/g, '');
     if (campo.value.length > 10) {
         campo.value = campo.value.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
     } else {
